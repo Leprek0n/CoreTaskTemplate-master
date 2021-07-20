@@ -8,15 +8,15 @@ import java.util.List;
 
 public class Main {
     public static void main(String[] args) {
-        UserService userDao = new UserServiceImpl();
-        userDao.createUsersTable();
-        userDao.saveUser("Daulet", "Lepessov", (byte) 20);
-        userDao.saveUser("Naruto", "Uzumaki", (byte) 20);
-        userDao.saveUser("Ali", "Chert", (byte) 20);
-        userDao.saveUser("Gala", "Chert", (byte) 20);
-        List<User> l = userDao.getAllUsers();
+        UserService userService = new UserServiceImpl();
+        userService.createUsersTable();
+        userService.saveUser("Daulet", "Lepessov", (byte) 20);
+        userService.saveUser("Naruto", "Uzumaki", (byte) 20);
+        userService.saveUser("Ali", "Chert", (byte) 20);
+        userService.saveUser("Gala", "Chert", (byte) 20);
+        List<User> l = userService.getAllUsers();
         System.out.println(l);
-        userDao.cleanUsersTable();
-        userDao.dropUsersTable();
+        userService.cleanUsersTable();
+        userService.dropUsersTable();
     }
 }
